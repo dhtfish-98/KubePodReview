@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import sys
 import review
+from local_input import read_local_file
 
 
 def main(argv=None) -> int:
@@ -16,11 +17,8 @@ def main(argv=None) -> int:
     args = parser.parse_args(argv)
     input_path = args.input
     try:
-        if input_path.is_symlink() or not input_path.is_file():
-            raise ValueError("input must be a regular non-symlink file")
-        if input_path.stat().st_size > 4 * 1024 * 1024:
-            raise ValueError("input exceeds 4 MiB")
-        text = input_path.read_text(encoding="utf-8")
+        data = read_local_file(input_path)
+        text = data.decode("utf-8")
         findings = review.review_text(text)
     except (ValueError, OSError, UnicodeError) as exc:
         print(f"error: {exc}", file=sys.stderr)
