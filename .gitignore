@@ -2,3 +2,10 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+
+# All generated build outputs and staging are local.
+!/Build/
+/Build/*
+!/Build/.gitignore
+__pycache__/
+*.py[cod]

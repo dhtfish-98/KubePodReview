@@ -1,0 +1,30 @@
+{
+  "schema": "project-build-layout.v1",
+  "project": "KubePodReview",
+  "author": "dhtfish98",
+  "kind": "manual",
+  "base_public_commit": "80ec45af828d3d5b23f54c1608cdeb5213fd24ac",
+  "restored_inputs": [
+    {
+      "original": "LICENSE",
+      "stored": "项目文档/LICENSE",
+      "sha256": "61cc81f0067016c9425160ac683a0791c1f9332a48ffe655d21b2602286e21be"
+    },
+    {
+      "original": "ORIGIN.md",
+      "stored": "项目文档/ORIGIN.md",
+      "sha256": "bc198aef86620eef09b872a2813fe1e03225a2eac47db19f41467c66066f0435"
+    },
+    {
+      "original": "README.md",
+      "stored": "项目文档/README.md",
+      "sha256": "281206ebe47eaf0225217f3aa7b862e4c76e27b828e6d6506c650fdaa884ae29"
+    },
+    {
+      "original": "VALIDATION.md",
+      "stored": "项目文档/VALIDATION.md",
+      "sha256": "577361a19814cecf18682166136349d7ae3154c07dfaa438f0b32b527a6632d7"
+    }
+  ],
+  "platform_entries": []
+}
