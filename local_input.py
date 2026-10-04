@@ -15,7 +15,10 @@ def read_local_file(path: Path, limit: int = 4 * 1024 * 1024) -> bytes:
     try:
         stream = os.fdopen(descriptor, "rb")
     except BaseException:
-        os.close(descriptor)
+        try:
+            os.close(descriptor)
+        except OSError:
+            pass
         raise
     with stream:
         info = os.fstat(stream.fileno())

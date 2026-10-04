@@ -35,6 +35,19 @@ class InputTests(unittest.TestCase):
                     if error.errno != errno.EBADF:
                         raise
 
+    def test_stream_construction_error_survives_a_closed_descriptor(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "input"
+            path.write_bytes(b"synthetic")
+
+            def close_then_fail(descriptor, mode):
+                os.close(descriptor)
+                raise ValueError("stream setup failed after close")
+
+            with patch("local_input.os.fdopen", side_effect=close_then_fail):
+                with self.assertRaisesRegex(ValueError, "stream setup failed after close"):
+                    read_local_file(path)
+
     def test_oversized_link_and_nonregular_inputs(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)
