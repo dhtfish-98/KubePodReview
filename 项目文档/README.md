@@ -1,6 +1,8 @@
-> 目录已整理：文档在「项目文档」，构建、缓存与暂存输入在「Build」。从仓库根目录运行 `python3 构建.py --build`；如需使用本文原有源码命令，先运行 `python3 构建.py --stage --ci`，再进入 `Build/源码`。暂存会恢复原输入路径。现有版本和历史验证记录按各自提交理解。
+> 目录已整理：文档在「项目文档」，暂存与缓存放在「Build」。本仓发布源码版；`python3 构建.py --build` 会返回 `OPEN_MANUAL_ADAPTER`，不生成安装包。运行源码命令前先执行 `python3 构建.py --stage --ci`，再进入 `Build/源码`。暂存会恢复原输入路径。现有版本和历史验证记录按各自提交理解。
 
 # KubePodReview
+
+**Source version:** [v0.1.0](https://github.com/dhtfish-98/KubePodReview/releases/tag/v0.1.0) ([release scope](RELEASES.md)); GitHub source archives only.
 
 Review selected securityContext declarations in a local Kubernetes workload JSON object. It runs locally, does not contact targets, and reports review prompts instead of exploit instructions.
 
